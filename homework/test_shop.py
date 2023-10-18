@@ -15,7 +15,9 @@ def product():
 def cart():
     return Cart()
 
+
 BUY_COUNT = 5
+
 
 class TestProducts:
     """
@@ -47,7 +49,6 @@ class TestCart:
         На некоторые методы у вас может быть несколько тестов.
         Например, негативные тесты, ожидающие ошибку (используйте pytest.raises, чтобы проверить это)
     """
-
 
     def test_cart_add_first_product(self, cart, product):
         cart.add_product(product, BUY_COUNT)
@@ -91,7 +92,6 @@ class TestCart:
         cart.add_product(product, BUY_COUNT)
         cart.get_total_price()
         assert cart.get_total_price() == product.price * BUY_COUNT
-
 
     def test_cart_empty_get_total_price(self, cart, product):
         cart.get_total_price()
