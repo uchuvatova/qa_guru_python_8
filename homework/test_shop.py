@@ -30,10 +30,15 @@ class TestProducts:
         assert product.check_quantity(product.quantity)
         assert not product.check_quantity(product.quantity + 1)
 
-    def test_product_buy(self, product):
+    def test_product_buy_all_available(self, product):
         # TODO напишите проверки на метод buy
         product.buy(product.quantity)
         assert product.quantity == 0
+
+    def test_product_buy(self, product):
+        # TODO напишите проверки на метод buy
+        product.buy(BUY_COUNT)
+        assert product.quantity == 995
 
     def test_product_buy_more_than_available(self, product):
         # TODO напишите проверки на метод buy,
